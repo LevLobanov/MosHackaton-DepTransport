@@ -1,0 +1,149 @@
+{
+  "ros": {
+    "input_topic": "/lidar_points",
+    "obstacle_topic": "/lidar/obstacles",
+    "obstacle_detected_topic": "/lidar/obstacle_detected",
+    "nearest_obstacle_distance_topic": "/lidar/nearest_obstacle_distance",
+    "no_obstacle_distance": -1.0,
+    "channel_size": 5,
+    "spin_period_ms": 10
+  },
+  "calibration": {
+    "left_rail_box": {
+      "min": [
+        0.4,
+        -17.0,
+        -1.9
+      ],
+      "max": [
+        0.9,
+        -2.0,
+        -0.9
+      ]
+    },
+    "right_rail_box": {
+      "min": [
+        -1.2,
+        -17.0,
+        -1.9
+      ],
+      "max": [
+        -0.7,
+        -2.0,
+        -0.9
+      ]
+    },
+    "bins": 10,
+    "selector_rank": 3,
+    "height_tolerance": 0.015,
+    "minimum_y_span": 0.05
+  },
+  "tunnel_path": {
+    "start_box": {
+      "min": [
+        -2.5,
+        -3.0,
+        -0.2
+      ],
+      "max": [
+        1.5,
+        0.0,
+        2.8
+      ]
+    },
+    "width": 6.0,
+    "height": 7.0,
+    "slice_thickness": 5.0,
+    "step_length": 1.0,
+    "grid_resolution": 0.1,
+    "repulsion_factor": 40.0,
+    "spring_factor": 1.0,
+    "max_steps": 250,
+    "restrict_points_to_search_window": true
+  },
+  "train": {
+    "width": 2.0,
+    "height": 2.8,
+    "path_smoothing_radius": 20,
+    "height_smoothing_radius": 20,
+    "trim_end_points": 5
+  },
+  "detection": {
+    "cluster_radius": 0.35,
+    "minimum_cluster_size": 3,
+    "maximum_alert_distance": null
+  },
+  "numeric": {
+    "minimum_segment_length": 1e-06,
+    "broad_phase_scale": 1.5,
+    "basis_epsilon": 1e-05,
+    "cost_distance_offset": 0.01
+  },
+  "compute": {
+    "backend": "auto",
+    "gpu_candidate_threshold": 512,
+    "gpu_point_threshold": 1024
+  },
+  "visualize": {
+    "enabled": true,
+    "raw_points": true,
+    "roi_boxes": false,
+    "calibration": true,
+    "train_motion": true,
+    "tunnel_center": true,
+    "tunnel_center_line": true,
+    "train_center_path": true,
+    "collisions": true,
+    "envelope": true,
+    "raw_point_radius": 0.02,
+    "train_path_radius": 0.05,
+    "collision_point_radius": 0.1,
+    "line_radius": 0.02,
+    "calibration_vector_length": 10.0,
+    "raw_color": [
+      180,
+      180,
+      180
+    ],
+    "roi_color": [
+      255,
+      0,
+      0
+    ],
+    "center_box_color": [
+      255,
+      255,
+      0
+    ],
+    "calibration_color": [
+      255,
+      0,
+      0
+    ],
+    "motion_color": [
+      0,
+      0,
+      255
+    ],
+    "tunnel_center_color": [
+      255,
+      100,
+      255
+    ],
+    "train_path_color": [
+      0,
+      240,
+      240
+    ],
+    "collision_color": [
+      255,
+      0,
+      0
+    ],
+    "envelope_color": [
+      255,
+      100,
+      255
+    ]
+  }
+}

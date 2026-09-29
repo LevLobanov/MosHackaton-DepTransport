@@ -1,0 +1,16 @@
+services:
+  lidar-obstacle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mos-hackathon:optimized
+    gpus: all
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility,graphics
+    volumes:
+      - ./settings.json:/app/settings.json:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    network_mode: host
+    ipc: host
+    restart: "no"
